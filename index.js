@@ -45,8 +45,18 @@ const writeToFile = (fileName, data) => {
 
 // Create a function to generate svg logo
 const generateLogo = (data) => {
-
-    return;
+        if(data.shape === 'triangle'){
+            const triangle = new Triangle(data.shapeColor, data.letters, data.textColor);
+            return triangle.render();
+        }
+        if(data.shape === 'square'){
+            const square = new Square(data.shapeColor, data.letters, data.textColor);
+            return square.render();
+        }
+        if(data.shape === 'circle'){
+            const circle = new Circle(data.shapeColor, data.letters, data.textColor);
+            return circle.render();
+        }
 }
 
 // Create a function to initialize app
