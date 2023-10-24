@@ -12,13 +12,13 @@ const questions = [
         name: 'letters',
         validate: (letters) => {
             if(!letters || letters.length > 3 || letters.length < 3){
-                return 'Please provide 3 characters';
+                return 'Please provide 3 letters!';
             }
             return true;
         }
     },
     {
-        message: 'Enter a text color.',
+        message: 'Enter a text color. (OR a hexadecimal number)',
         type: 'input',
         name: 'textColor',
     },
@@ -29,7 +29,7 @@ const questions = [
         choices: ['triangle', 'circle', 'square'],
     },
     {
-        message: 'Enter a color for your shape.',
+        message: 'Enter a color for your shape. (OR a hexadecimal number)',
         type: 'input',
         name: 'shapeColor'
     }
@@ -45,18 +45,22 @@ const writeToFile = (fileName, data) => {
 
 // Create a function to generate svg logo
 const generateLogo = (data) => {
-        if(data.shape === 'triangle'){
-            const triangle = new Triangle(data.shapeColor, data.letters, data.textColor);
-            return triangle.render();
-        }
-        if(data.shape === 'square'){
-            const square = new Square(data.shapeColor, data.letters, data.textColor);
-            return square.render();
-        }
-        if(data.shape === 'circle'){
-            const circle = new Circle(data.shapeColor, data.letters, data.textColor);
-            return circle.render();
-        }
+    switch(data.shape){
+        case 'triangle':
+            const triangle = new Triangle(data.shapeColor, data.letters.toUpperCase(), data.textColor).render();
+            return triangle;
+        
+        case 'square':
+            const square = new Square(data.shapeColor, data.letters.toUpperCase(), data.textColor).render();
+            return square;
+        
+        case 'circle':
+            const circle = new Circle(data.shapeColor, data.letters.toUpperCase(), data.textColor).render();
+            return circle;
+
+        default: return `What shape am I?`;
+    }
+    
 }
 
 // Create a function to initialize app
