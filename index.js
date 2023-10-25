@@ -10,6 +10,7 @@ const questions = [
         message: 'Enter 3 letters for your logo.',
         type: 'input',
         name: 'letters',
+        // Checks if the user input enters exactly 3 letters
         validate: (letters) => {
             if(!letters || letters.length > 3 || letters.length < 3){
                 return 'Please provide 3 letters!';
@@ -45,6 +46,7 @@ const writeToFile = (fileName, data) => {
 
 // Create a function to generate svg logo
 const generateLogo = (data) => {
+    // Checks what shape was entered and goes to the case accordingly to instantiate a new object of triangle, square, or circle
     switch(data.shape){
         case 'triangle':
             const triangle = new Triangle(data.shapeColor, data.letters.toUpperCase(), data.textColor).render();
@@ -68,7 +70,7 @@ init = () => {
     inquirer
     .prompt(questions)
     .then((response) => {
-        writeToFile('./results/logo.svg', generateLogo(response));
+        writeToFile('./logo.svg', generateLogo(response));
     })
 }
 

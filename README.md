@@ -29,9 +29,6 @@ Making a svg logo with object oriented programming.
 * [https://github.com/Blackswan1010](https://github.com/Blackswan1010) 
 
 
-## Credits 
-
- 
 
 
 ## License
@@ -39,21 +36,7 @@ Making a svg logo with object oriented programming.
  https://api.github.com/licenses/MIT 
 
 
-## Features 
-
- 
-
-
-## Contributing 
-
- 
-
-
 ## Tests 
 
- 
 
-
-## Questions
-You can reach me at  for any additional questions.
 
