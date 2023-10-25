@@ -97,7 +97,7 @@ class Circle extends Shape {
     }
 }
 ```
-The Circle class is definse with the inherited properties of Shape class, with a method of render that is polymorphed to return a string.
+The Circle class is define with the inherited properties of Shape class, with a method of render that is polymorphed to return a string.
 
 ## Author Info 
 
@@ -107,13 +107,12 @@ The Circle class is definse with the inherited properties of Shape class, with a
 
 
 ## License
-![License: MIT](https://img.shields.io/badge/MIT-blue.svg) 
  https://api.github.com/licenses/MIT 
 
 
 ## Tests 
 
-To run the following sample tests below, you must install the package jest, then enter the following command 'npm run test'.
+To run the following sample tests below, you must install the package jest by entering in the command line 'npm i jest', then enter the following command 'npm run test'.
 ```js
 // Testing Shape's class function throws an error if it is called
 describe('Shape', () => {
